@@ -9,7 +9,7 @@ class SintomasViewModel: ViewModel() {
         sintomas.add(SintomasData(text))
     }
 
-    fun removerSintomas(text: String): Boolean{
-        return sintomas.remove(SintomasData(text))
-    }
+//    fun removerSintomas(text: String): Boolean{
+//        return sintomas.remove(SintomasData(text))
+//    }
 }
