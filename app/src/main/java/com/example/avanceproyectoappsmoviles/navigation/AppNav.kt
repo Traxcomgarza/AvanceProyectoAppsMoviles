@@ -23,10 +23,12 @@ import androidx.navigation.compose.rememberNavController
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.avanceproyectoappsmoviles.PantallaIndicadores
 import com.example.avanceproyectoappsmoviles.PantallaRecordatorio
 import com.example.avanceproyectoappsmoviles.PantallaRegistroDiario
 import com.example.avanceproyectoappsmoviles.PantallaSintomas
+import com.example.avanceproyectoappsmoviles.SintomasViewModel
 
 
 enum class Destination(
@@ -45,6 +47,7 @@ enum class Destination(
 fun AppNavHost(navController: NavHostController,
                startDestination: Destination,
                modifier: Modifier = Modifier){
+    val sintomasViewModel: SintomasViewModel = viewModel()
 
     NavHost(
         navController = navController,
@@ -53,7 +56,7 @@ fun AppNavHost(navController: NavHostController,
         Destination.entries.forEach { destination ->
             composable(destination.route){
                 when (destination){
-                    Destination.SINTOMAS -> PantallaSintomas()
+                    Destination.SINTOMAS -> PantallaSintomas(sintomasViewModel)
                     Destination.INDICADORES -> PantallaIndicadores()
                     Destination.RECORDATORIO -> PantallaRecordatorio()
                     Destination.DIARIO -> PantallaRegistroDiario()
@@ -74,7 +77,7 @@ fun BarraNavegacion(modifier: Modifier = Modifier) {
     Scaffold(
         modifier = modifier,
         bottomBar = {
-            NavigationBar(windowInsets = NavigationBarDefaults.windowInsets, containerColor = Color.Green) {
+            NavigationBar(windowInsets = NavigationBarDefaults.windowInsets, containerColor = Color(0xFFD8E3DF)) {
                 Destination.entries.forEachIndexed { index, destination ->
                     NavigationBarItem(
                         selected = selectedDestination == index,
