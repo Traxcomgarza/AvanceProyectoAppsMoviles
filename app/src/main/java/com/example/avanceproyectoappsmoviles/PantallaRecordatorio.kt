@@ -207,8 +207,7 @@ fun PantallaListaRecordatorios(
                             Card(
                                 modifier = Modifier.fillMaxWidth(),
                                 colors = CardDefaults.cardColors(
-                                    containerColor = Color(0xFFD8E3DF)),
-                                elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+                                    containerColor = Color(0xFFD8E3DF))
                             ) {
                                 Column(Modifier.padding(16.dp)) {
                                     Text(rec.texto, color = Color(0xFF3E6259))
