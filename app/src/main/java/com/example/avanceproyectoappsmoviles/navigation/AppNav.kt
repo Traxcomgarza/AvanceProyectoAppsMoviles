@@ -104,7 +104,7 @@ fun BarraNavegacion(modifier: Modifier = Modifier) {
     Scaffold(
         modifier = modifier,
         bottomBar = {
-            NavigationBar(windowInsets = NavigationBarDefaults.windowInsets, containerColor = Color.Green) {
+            NavigationBar(windowInsets = NavigationBarDefaults.windowInsets, containerColor = Color(0xFFD8E3DF)) {
                 Destination.entries
                     .filter { it != Destination.AGREGAR_RECORDATORIO }
                     .forEachIndexed { index, destination ->
