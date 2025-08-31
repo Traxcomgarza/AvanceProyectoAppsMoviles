@@ -40,6 +40,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
+import com.example.avanceproyectoappsmoviles.navigation.BarraNavegacion
 import com.example.avanceproyectoappsmoviles.ui.theme.AvanceProyectoAppsMovilesTheme
 import org.w3c.dom.Text
 
@@ -49,9 +50,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AvanceProyectoAppsMovilesTheme  {
-                    SintomasCrearMostrar(
-                        sintomasViewModel = SintomasViewModel()
-                    )
+                        BarraNavegacion()
+
+//                    SintomasCrearMostrar(
+//                        sintomasViewModel = SintomasViewModel()
+//                    )
 
 
                 }
