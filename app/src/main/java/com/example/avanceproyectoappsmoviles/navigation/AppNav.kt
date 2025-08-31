@@ -30,7 +30,6 @@ import com.example.avanceproyectoappsmoviles.PantallaRegistroDiario
 import com.example.avanceproyectoappsmoviles.PantallaSintomas
 import com.example.avanceproyectoappsmoviles.SintomasViewModel
 
-
 enum class Destination(
     val route: String,
     val label: String,
@@ -63,7 +62,6 @@ fun AppNavHost(navController: NavHostController,
                 }
             }
         }
-
     }
 }
 
@@ -77,7 +75,10 @@ fun BarraNavegacion(modifier: Modifier = Modifier) {
     Scaffold(
         modifier = modifier,
         bottomBar = {
-            NavigationBar(windowInsets = NavigationBarDefaults.windowInsets, containerColor = Color(0xFFD8E3DF)) {
+            NavigationBar(
+                windowInsets = NavigationBarDefaults.windowInsets,
+                containerColor = Color(0xFFD8E3DF)
+            ) {
                 Destination.entries.forEachIndexed { index, destination ->
                     NavigationBarItem(
                         selected = selectedDestination == index,

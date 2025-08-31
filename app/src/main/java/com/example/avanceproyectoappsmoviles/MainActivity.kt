@@ -57,18 +57,15 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AvanceProyectoAppsMovilesTheme  {
-                        BarraNavegacion()
-
-//                    SintomasCrearMostrar(
-//                        sintomasViewModel = SintomasViewModel()
-//                    )
-
-
-                }
+                BarraNavegacion()
+                // Puedes descomentar para pruebas:
+                // SintomasCrearMostrar(
+                //     sintomasViewModel = SintomasViewModel()
+                // )
             }
         }
     }
-
+}
 
 data class SintomasData(val text: String)
 
@@ -79,11 +76,8 @@ fun SintomasCrearMostrar(modifier: Modifier = Modifier, sintomasViewModel: Sinto
         modifier = Modifier
             .fillMaxSize()
             .padding(30.dp)
-
-
     )
     {
-
         TextField(
             value = input,
             onValueChange = {input = it},
@@ -100,7 +94,6 @@ fun SintomasCrearMostrar(modifier: Modifier = Modifier, sintomasViewModel: Sinto
                     sintomasViewModel.addSintomas(input)
                     input = ""
                 },
-
                 enabled = input.isNotEmpty()
             ) {
                 Text("Nuevo Sintoma")
@@ -116,7 +109,7 @@ fun SintomasCrearMostrar(modifier: Modifier = Modifier, sintomasViewModel: Sinto
             items(
                 sintomasViewModel.sintomas
             ){
-                item  ->
+                    item  ->
                 Card (
                     modifier = Modifier.fillMaxWidth()
                 ){
@@ -128,19 +121,15 @@ fun SintomasCrearMostrar(modifier: Modifier = Modifier, sintomasViewModel: Sinto
                 }
             }
         }
-
     }
 }
-@Preview(showBackground = true,
-    showSystemUi = true)
+
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun Preview(){
     AvanceProyectoAppsMovilesTheme {
-//        SintomasCrearMostrar(
-//            sintomasViewModel = SintomasViewModel()
-//        )
+        // SintomasCrearMostrar(
+        //     sintomasViewModel = SintomasViewModel()
+        // )
     }
-
-
 }
-
